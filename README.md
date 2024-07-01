@@ -46,13 +46,11 @@ with open('fg_dataset.pkl','rb') as f:
 (x_train, y_train), (x_validation, y_validation), (x_test, y_test) = data
 ```
 
-6. Normalize and reshape data 
+1. Reshape data 
 
 ```Python
-x_train = x_train.astype("float32") /255
 x_train = np.array([image.reshape((128, 128, 3)) for image in x_train])
-
-x_test = x_test.astype("float32") /255
+x_validation = np.array([image.reshape((128, 128, 3)) for image in x_validation])
 x_test = np.array([image.reshape((128, 128, 3)) for image in x_test])
 ```
 
